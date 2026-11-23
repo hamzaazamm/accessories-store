@@ -1,0 +1,19 @@
+{
+  "name": "gadget-district",
+  "version": "1.0.0",
+  "description": "Gadget District - Full-stack Mobile Accessories E-Commerce Platform",
+  "private": true,
+  "scripts": {
+    "test": "cd server && npm test",
+    "test:all": "cd server && npm test && cd ../client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "seed:destroy": "cd server && npm run seed:destroy",
+    "build:client": "cd client && npm run build"
+  },
+  "dependencies": {
+    "localtunnel": "^2.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+const express = require('express');
+const router = express.Router();
+const {
+  getProducts,
+  getProduct,
+  getRelatedProducts,
+  checkCompatibility,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+} = require('../controllers/product.controller');
+const { protect, admin } = require('../middleware/auth');
+
+router.get('/', getProducts);
+router.get('/:identifier', getProduct);
+router.get('/:id/related', getRelatedProducts);
+router.get('/:id/check-compatibility', checkCompatibility);
+
+router.post('/', protect, admin, createProduct);
+router.put('/:id', protect, admin, updateProduct);
+router.delete('/:id', protect, admin, deleteProduct);
+
+module.exports = router;
